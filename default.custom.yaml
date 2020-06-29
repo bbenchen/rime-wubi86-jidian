@@ -16,11 +16,12 @@ patch:
 
   # Menu
   menu:
-    page_size: 3                    # 候选词数量
+    page_size: 9                    # 候选词数量
   switcher:
     hotkeys:
       - "Control+0"
       - "Shift+Control+0"
+      - "Control+grave"
     abbreviate_options: true
     caption: "【 输入法设置 】"
     option_list_separator: "｜"
@@ -38,8 +39,8 @@ patch:
     good_old_caps_lock: true       # true: 在保持 cap 键原有的特征， false: 点击不会切换大小写
     switch_key:
       Caps_Lock: commit_code        # 如果想用 cap 键切换中英文输入，就修改为上面三种的任一一种，否则用 noop
-      Shift_L: commit_code          # macOs 上 shift 键不区别左右，设置参数同上
-      Shift_R: commit_code
+      Shift_L: inline_ascii          # macOs 上 shift 键不区别左右
+      Shift_R: inline_ascii
       Control_L: noop
       Control_R: noop
 
