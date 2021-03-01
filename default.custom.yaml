@@ -22,7 +22,6 @@ patch:
     hotkeys:
       - "Control+0"
       - "Shift+Control+0"
-      - "Control+grave"
     abbreviate_options: true
     caption: "【 输入法设置 】"
     option_list_separator: "｜"
