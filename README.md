@@ -1,50 +1,48 @@
-![rime_all](https://user-images.githubusercontent.com/12215982/139872549-0b3f1195-188d-483d-ab66-4de9d3f48a73.png)
+![rime_all](https://user-images.githubusercontent.com/12215982/144625408-61b43796-e120-4e12-9c70-ade0d91a77b3.png)
 
-该库是 Rime 输入法的一个 86 版极点五笔的输入方案，支持多平台（Windows macOS Linux）
-并配有词条管理工具 [五笔词条工具](https://github.com/KyleBing/wubi-dict-editor)
+该库是 Rime 输入法的一个 86版极点五笔的输入方案，支持多平台（Windows、macOS、Linux）
 
 ## 一、前言
 
-**什么是 Rime 输入法**
+Rime 是个输入法集合，涵盖常用的三个平台 Windows、macOS、Linux，三个平台对应的输入法如上图。
 
-Rime 是一款跨平台的优秀输入法的内核，不同平台的名字也有不同：
+该输入法具有高度可定制化的特性，输入法通过读取不同的配置文件，来实现不同输入方式：全拼、双拼、五笔、仓颉，不同的输入习惯：二三候选、回车清码、z键拼音反查等等。
 
-- `Windows` - 小狼毫 ( `weasel` )
-- `macOS` - 鼠须管 ( `squirrel` )
-- `Linux` - 中州韵 ( `ibus-rime` )
+正因为如此高的可自定义性，拉高了它的使用门槛。为了让更多的五笔用户更称心通过 Rime 输入五笔，就有了这个86五笔输入方案，它的输入习惯比较接近于之前的极点五笔，码表也是使用的极点五笔的码表。
 
-Rime 输入法的优势在于它高度的可自定义化，不单单可以定义输入法码表，还可以定义输入法翻译码表的方式，标点对应等等等等。
+由于三个平台使用的码表配置文件是一样的，所以能够在多个平台间保持同一种输入习惯，打起字来会比较舒服。
+
+该码表词条不是很多，很多近期的词语可能会没有，需要自己添加，可以使用配套工具 [五笔词条工具](https://github.com/KyleBing/wubi-dict-editor) 来完成词条的添加。
+
+> 好词库的特点是：减少特殊词的数量，增加通用词的频率。
 
 
-**用极点输入法的原因**
+## 二、不同平台的输入法外观
 
-用久了五笔的都知道，喜欢五笔的因为是五笔的重码少，如果码表太多重码体验就很差了。
-好词库的特点是：减少特殊词的数量，增加通用词的频率。
-
-### 皮肤
 
 __macOS__
 
-<img width="435" alt="Screen Shot 2020-12-09 at 12 15 57" src="https://user-images.githubusercontent.com/12215982/101584309-56833e80-3a18-11eb-9b83-a43204ad363c.png">
+<img width="330" alt="Screen Shot 2020-12-09 at 12 15 57" src="https://user-images.githubusercontent.com/12215982/149726120-1a066937-551c-4a43-b2e8-b081f6366c9d.png">
 
 __Windows__
 
 皮肤可以通过修改 `weasel.custom.yaml` 文件内的 color_scheme 实现修改，对应正文的颜色方案
+
 ```yaml
 patch:
   style:
     color_scheme: WhiteAqua  # 匹配正文的颜色方案，对应正文的颜色方案名
 ```
 
-<img width="485" src="https://user-images.githubusercontent.com/12215982/139873356-1a0c91a9-7343-4dd8-910b-c8f2f7003365.png">
+<img width="500" src="https://user-images.githubusercontent.com/12215982/139873356-1a0c91a9-7343-4dd8-910b-c8f2f7003365.png">
 
 __Linux: Ubuntu__
 
-<img width="350" alt="skin-ubuntu" src="https://user-images.githubusercontent.com/12215982/131607073-0b3dfe0e-bfc8-4be0-91c7-b304702acdda.png">
+<img width="250" alt="skin-ubuntu" src="https://user-images.githubusercontent.com/12215982/131607073-0b3dfe0e-bfc8-4be0-91c7-b304702acdda.png">
 
 
 
-## 二、文件说明
+## 三、文件说明
 
 ```bash
 .
@@ -64,9 +62,9 @@ __Linux: Ubuntu__
 └── wubi86_jidian_extra.dict.yaml           # 词库文件 - 扩展词库
 ```
 
-## 三、安装
+## 四、安装
 
-### 1. 安装 鼠须管(macOS)
+### 1. 鼠须管（macOS）
 去 [官网下载](https://rime.im/download/)，按步骤安装即可
 
 1. 下载 五笔配置文件 [https://github.com/KyleBing/rime-wubi86-jidian](https://github.com/KyleBing/rime-wubi86-jidian)
@@ -90,18 +88,18 @@ __Linux: Ubuntu__
 > 需要将你下载的文件放入 `/Users/你用户名/Library/Rime` 这个目录下，了然否？
 
 
-### 2. 配置 小狼毫（Windows）
+### 2. 小狼毫（Windows）
 
 Windows 中的配置方法：
-1. 点击【开始】
-2. 打开刚刚安装的小狼毫输入法程序目录，打开【用户文件夹】
+1. 点击<kbd>开始</kbd>
+2. 打开刚刚安装的小狼毫输入法程序目录，打开<kbd>用户文件夹</kbd>
 3. 把该项目中的文件复制到里面
-4. 点击开始菜单中的【部署】即可
+4. 点击开始菜单中的<kbd>部署</kbd>即可
 
 
-### 3. 配置 ibus-rime (Ubuntu)
+### 3. ibus-rime (Ubuntu)
 
-执行下面指令安装 ibus-rime 输入法
+执行下面指令安装 `ibus-rime` 输入法
 
 ```bash
 sudo apt-get install ibus-rime
@@ -109,7 +107,7 @@ sudo apt-get install ibus-rime
 
 ubuntu 的配置文件目录在 `~/.config/ibus/rime/`
 
-## 四、使用说明
+## 五、使用说明
 
 ### 1. 选项菜单
 在输入状态时，<kbd>control</kbd> + <kbd>0</kbd> 或者 <kbd>shift</kbd> + <kbd>control</kbd> + <kbd>0</kbd> 弹出菜单
@@ -135,10 +133,11 @@ ubuntu 的配置文件目录在 `~/.config/ibus/rime/`
 具体可以看这个文件内的说明： [wubi86_jidian_trad.schema.yaml](https://github.com/KyleBing/rime-wubi86-jidian/blob/master/wubi86_jidian_trad.schema.yaml)
 > 以不切换文字的形式使用只是暂时转繁，换个程序就会恢复简体了。如果你想一直使用简入繁出就选择 「简入繁出」这个方案
 
-### 7. 系统 `时间` 和 `日期`
+### 7. 系统 `时间`、`日期` 和 `星期`
 输入对应词，获取当前日期和时间
 - `date` 输出日期，格式 `2019年06月19日` `2019-06-19`
 - `time` 输出时间，格式 `10:00` `10:00:00`
+- `week` 输出星期，格式 `周四` `星期四`
 
 ### 8. 支持大写数字输入：壹贰叁肆伍陆
 本库中包含一个可以输入大写数字的方案，名叫 `大写数字`，呼出菜单选择该方案即可。
@@ -158,15 +157,16 @@ ubuntu 的配置文件目录在 `~/.config/ibus/rime/`
 <img width="300" src="https://user-images.githubusercontent.com/12215982/134291024-7df6073c-ec5a-420c-bcd1-2e63ea33d04b.jpg"/>
 
 
-## 五、常见自定义功能
+## 六、常见自定义功能
 所有配置说明都在配置文件中说明了，如果有其它问题可以在 `issue` 中提出，或者在群里（[QQ群：878750538](https://jq.qq.com/?_wv=1027&k=st8cY2sI)） 讨论，有需要就 `@十月`，一定要 `@` 哟，不然我看不到的
 
 ### 1. 回车清码
-默认是关闭的
-打开 `default.custom.yaml` 文件，找到下面这行，把前面的 `#` 去掉，跟上面对齐即可开启回车清码功能
+默认是开启的
+打开 `default.custom.yaml` 文件，找到下面这行，在前面添加 `#` 即可
 
 ```yaml
-     - {accept: Return, send: Escape, when: composing}   # 回车清码
+      # 回车清码
+      - { when: composing, accept: Return, send: Escape }
 ```
 
 ### 2. 空码时自动清码
@@ -190,7 +190,7 @@ ubuntu 的配置文件目录在 `~/.config/ibus/rime/`
 另一种是使用工具。Rime 默认是没有词条管理工具的，所以就写了一个工具，基本满足日常需求，如果有什么其它需要的功能，可以跟我说。
 [五笔词条工具](https://github.com/KyleBing/wubi-dict-editor)
 
-<img width="600" alt="Screen Shot 2021-08-07 at 23 38 13" src="https://user-images.githubusercontent.com/12215982/128605586-47399a2e-c036-4729-aeef-8c67281b45ba.png">
+<img width="812" alt="Screen Shot 2021-11-22 at 19 22 45" src="https://user-images.githubusercontent.com/12215982/143464548-0458c637-ce41-450e-8faa-e826dd1fa5f3.png">
 
 ### 5. 输出系统变量
 自 Rime `v0.13` 之后可自定义输出系统变量，如日期等
@@ -219,7 +219,7 @@ translator:
 ```
 
 
-## 六、其它相关链接
+## 七、其它相关链接
 
 __工具链接__
 - [x] 五笔码表助手： [https://github.com/KyleBing/wubi-dict-editor](https://github.com/KyleBing/wubi-dict-editor)
