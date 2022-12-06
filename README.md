@@ -48,20 +48,26 @@ __Ubuntu__
 
 ```bash
 .
+├── LICENSE                                 # license
 ├── README.md                               # 当前说明文档
-├── rime.lua                                # 配置文件 - 可以输出系统变量的函数
-├── default.custom.yaml                     # 配置文件 - 自定义一些输入法的功能：标点，二三候选等
-├── squirrel.custom.yaml                    # 配置文件 - 鼠须管（for macOS）输入法候选词界面
-├── weasel.custom.yaml                      # 配置文件 - 小狼毫（for Windows）输入法候选词界面
-├── numbers.schema.yaml                     # 输入方案 - 大写数字
-├── pinyin_simp.dict.yaml                   # 词库文件 - 简体拼音码表 - 五笔中拼音输入需要的
-├── pinyin_simp.schema.yaml                 # 输入方案 - 简体拼音
-├── wubi86_jidian_pinyin.schema.yaml        # 输入方案 - 五笔拼音混输
-├── wubi86_jidian.schema.yaml               # 输入方案 - 极点五笔
-├── wubi86_jidian.dict.yaml                 # 词库文件 - 极点五笔主码表
-├── wubi86_jidian_trad.schema.yaml          # 输入方案 - 五笔简入繁出
-├── wubi86_jidian_user.dict.yaml            # 词库文件 - 用户私人词库
-└── wubi86_jidian_extra.dict.yaml           # 词库文件 - 扩展词库
+
+├── rime.lua                                # 配置 - 可以输出系统变量的函数
+├── default.custom.yaml                     # 配置 - 自定义一些输入法的功能：标点，二三候选等
+├── squirrel.custom.yaml                    # 配置 - 鼠须管（for macOS）输入法候选词界面
+├── weasel.custom.yaml                      # 配置 - 小狼毫（for Windows）输入法候选词界面
+├── numbers.schema.yaml                     # 方案 - 大写数字
+
+├── pinyin_simp.dict.yaml                   # 词库 - 简体拼音码表 - 五笔中拼音输入需要的
+├── pinyin_simp.schema.yaml                 # 方案 - 简体拼音
+
+├── wubi86_jidian_pinyin.schema.yaml        # 方案 - 五笔拼音混输
+├── wubi86_jidian.schema.yaml               # 方案 - 极点五笔
+├── wubi86_jidian.dict.yaml                 # 词库 - 极点五笔主码表
+├── wubi86_jidian_trad.schema.yaml          # 方案 - 五笔简入繁出
+├── wubi86_jidian_trad_pinyin.schema.yaml   # 方案 - 五笔拼音混输 简入繁出
+├── wubi86_jidian_user.dict.yaml            # 词库 - 用户私人词库
+└── wubi86_jidian_extra.dict.yaml           # 词库 - 扩展词库
+
 ```
 
 ## 四、安装
@@ -119,17 +125,26 @@ ubuntu 的配置文件目录在
 ### 2. 菜单内容
 弹出的菜单中，处于第一位的是当前使用的输入法方案，其后跟着是该方案中的输入法菜单，有【半角 - 全角】【简 - 繁】等常见功能菜单，再后面是其它可选的输入法方案，对应 [`default.custom.yaml`](https://github.com/KyleBing/rime-wubi86-jidian/blob/master/default.custom.yaml) 中 `schema_list` 字段内容
 
-### 3. 默认二三候选
+### 3. 五笔拼音混输
+
+在 [default.custom.yaml](https://github.com/KyleBing/rime-wubi86-jidian/blob/master/default.custom.yaml) 文件中罗列着可选的方案，已经注明具体方案的作用，如果你想五笔拼音混输，可以将混输方案移至最上面。
+
+<img width="572" alt="Screenshot 2022-11-24 at 09 00 17" src="https://user-images.githubusercontent.com/12215982/203671534-c1d02ca4-66cd-4b8e-94b8-07908a1ac293.png">
+
+### 4. 默认二三候选
 默认的二三候选是 <kbd>;</kbd> <kbd>'</kbd> 两个键
 
-### 4. 候选翻页
-方向 <kbd>上</kbd><kbd>下</kbd>、<kbd>-</kbd> <kbd>=</kbd>、<kbd>[</kbd> <kbd>]</kbd>
+### 5. 候选翻页
+方向 <kbd>上</kbd><kbd>下</kbd>、<kbd>[</kbd> <kbd>]</kbd>
 
-### 5. 临时拼音输入
+默认已关闭 <kbd>-</kbd> <kbd>=</kbd> 的上下翻页功能，如果需要请修改 `default.custom.yaml` 内容
+
+### 6. 临时拼音输入
 在忘了某字的五笔编码时，<kbd>z</kbd>键可以进入临时拼音输入模式
 
-### 6. 支持 简入繁出
+### 7. 支持 简入繁出
 是以切换输入方案的形式实现的，使用时，调出菜单，选择 `简入繁出` 方案即可
+
 简繁转换的功能能实现：
 - 转繁体
 - 转香港繁体
@@ -137,14 +152,15 @@ ubuntu 的配置文件目录在
 具体可以看这个文件内的说明： [wubi86_jidian_trad.schema.yaml](https://github.com/KyleBing/rime-wubi86-jidian/blob/master/wubi86_jidian_trad.schema.yaml)
 > 以不切换文字的形式使用只是暂时转繁，换个程序就会恢复简体了。如果你想一直使用简入繁出就选择 「简入繁出」这个方案
 
-### 7. 系统 `时间`、`日期` 和 `星期`
+### 8. 系统 `时间`、`日期` 和 `星期`
 输入对应词，获取当前日期和时间
 - `date` 输出日期，格式 `2019年06月19日` `2019-06-19`
 - `time` 输出时间，格式 `10:00` `10:00:00`
 - `week` 输出星期，格式 `周四` `星期四`
 
-### 8. 支持大写数字输入：壹贰叁肆伍陆
+### 9. 支持大写数字输入：壹贰叁肆伍陆
 本库中包含一个可以输入大写数字的方案，名叫 `大写数字`，呼出菜单选择该方案即可。
+
 在这个模式下：具体可以看源文件 [`numbers.schema.yaml`](https://github.com/KyleBing/rime-wubi86-jidian/blob/master/numbers.schema.yaml)
 
 
@@ -155,7 +171,7 @@ ubuntu 的配置文件目录在
 | z           | 整之               | | z          | 整之               |
 | y           | 元月亿             | | y          | 元月亿             |
 
-### 9. 特殊字符快捷输入
+### 10. 特殊字符快捷输入
 默认是关闭的，具体可以查看 wiki [如何启用 ` /fh` 这种特殊符号输入](https://github.com/KyleBing/rime-wubi86-jidian/wiki/%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-%60--fh%60-%E8%BF%99%E7%A7%8D%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7%E8%BE%93%E5%85%A5)
 
 <img width="300" src="https://user-images.githubusercontent.com/12215982/134291024-7df6073c-ec5a-420c-bcd1-2e63ea33d04b.jpg"/>
@@ -166,6 +182,7 @@ ubuntu 的配置文件目录在
 
 ### 1. 回车清码
 默认是开启的
+
 想要关闭，打开 `default.custom.yaml` 文件，找到下面这行，在前面添加 `#` 即可，如下
 
 ```yaml
@@ -193,7 +210,7 @@ ubuntu 的配置文件目录在
 > 这个操作要注意的是词组与编码之间的符号是`tab`，写错了这个词是不会被识别的
 
 另一种是使用工具。Rime 默认是没有词条管理工具的，所以就写了一个工具，基本满足日常需求，如果有什么其它需要的功能，可以跟我说。
-[五笔词条工具](https://github.com/KyleBing/wubi-dict-editor)
+> [五笔词条工具](https://github.com/KyleBing/wubi-dict-editor)
 
 <img width="812" alt="Screen Shot 2021-11-22 at 19 22 45" src="https://user-images.githubusercontent.com/12215982/143464548-0458c637-ce41-450e-8faa-e826dd1fa5f3.png">
 
@@ -201,6 +218,7 @@ ubuntu 的配置文件目录在
 自 Rime `v0.13` 之后可自定义输出系统变量，如日期等
 
 文件 [`rime.lua`](https://github.com/KyleBing/rime-wubi86-jidian/blob/master/rime.lua) 盛放的是调用的方法，你需要在相应的 `XXXX.schema.yaml` 文件的 `engine`/`translators` 字段添加一些东西，可以参阅本库的 [`wubi86_jidian.schema.yaml`](https://github.com/KyleBing/rime-wubi86-jidian/blob/master/wubi86_jidian.schema.yaml) 文件。
+
 具体 `rime.lua` 文件说明参阅这里： [https://github.com/hchunhui/librime-lua/blob/master/sample/lua/date.lua](https://github.com/hchunhui/librime-lua/blob/master/sample/lua/date.lua)
 
 ### 6. 开启自动造词
@@ -221,6 +239,15 @@ translator:
   enable_user_dict: true               # 是否开启用户词典（用户词典记录动态字词频，用户词）
   enable_encoder: true
 
+```
+
+
+### 7. 单字派
+如果你是单字派，只打单字，可以修改 `wubi86_jidian.schema.yaml` 这个文件，找到以下位置，根据需要去除对应行前面的 `#`，重新部署即可生效
+```yaml
+  filters:
+#   - lua_filter@single_char_first_filter # 单字优先
+#    - lua_filter@single_char_only # 纯单字
 ```
 
 
