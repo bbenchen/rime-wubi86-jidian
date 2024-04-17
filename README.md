@@ -1,28 +1,33 @@
-![rime_all](https://github.com/KyleBing/rime-wubi86-jidian/assets/12215982/fdc029e5-7844-4819-a8f8-ac9b59367f23)
+![rime_all](https://github.com/KyleBing/rime-wubi86-jidian/assets/12215982/710c7e80-1660-48f1-bcc5-157c6bd3f662)
 
-该库是 [Rime](https://rime.im/) 输入法一个 86版极点五笔的输入配置方案，支持多平台（Windows、macOS、Linux、iOS）
+该库是 [Rime](https://rime.im/) 输入法一个 86 版极点五笔的输入配置方案，支持多平台（Windows、macOS、Linux、iOS、Android）
 
 ## 一、概述
 
 这里是一个输入法配置方案，不是输入法本身。
 
-`Rime` 是个输入法内核，在它的基础之上，又出现了涵盖 **Windows**、**macOS**、**Linux**、**iOS** 四个常用操作系统的输入法，对应的输入法如下：
+`Rime` 是个输入法内核，在它的基础之上，又出现了涵盖 **Windows**、**macOS**、**Linux**、**iOS**、**Android** 五个常用操作系统的输入法，对应如下：
 
-|   操作系统    |   对应的输入法   | github                                                                     |
-|:---------:|:----------:|----------------------------------------------------------------------------|
-|  Windows  |    小狼毫     | [https://github.com/rime/weasel](https://github.com/rime/weasel)           
-|   macOS   |    鼠须管     | [https://github.com/rime/squirrel](https://github.com/rime/squirrel)       
-|  Ubuntu   | ibus-rime  | [https://github.com/rime/ibus-rime](https://github.com/rime/ibus-rime)     
-|    iOS    |    仓输入法    | [https://github.com/imfuxiao/Hamster](https://github.com/imfuxiao/Hamster) 
+|  操作系统   | 对应的输入法 | github                                                                     |
+|:-------:|:------:|----------------------------------------------------------------------------|
+| Windows |  小狼毫   | [https://github.com/rime/weasel](https://github.com/rime/weasel)           |
+|  macOS  |  鼠须管   | [https://github.com/rime/squirrel](https://github.com/rime/squirrel)       |
+| Ubuntu  |  中州韵   | [https://github.com/rime/ibus-rime](https://github.com/rime/ibus-rime)     |
+|   iOS   |  仓输入法  | [https://github.com/imfuxiao/Hamster](https://github.com/imfuxiao/Hamster) |
+| Android | 同文输入法  | [https://github.com/osfans/trime](https://github.com/osfans/trime)         |
 
 所有由 `Rime` 内核开发过来的输入法都可以共用一套输入方案。  
-由于四个输入平台使用的码表是一样的，所以能够在多个操作系统间保持同一种输入习惯，打起字来也会比较舒服。
+由于五个输入平台使用的码表是一样的，所以能够在多个平台间保持同一种输入习惯，这一点对五笔输入而言尤为重要，打到最后，其实记的都是词频。
 
-该输入法具有高度可定制化的特性，通过读取不同的配置文件可以：
+Rime 输入法具有高度可定制化的特性，通过读取不同的配置文件可以：
 - 实现不同输入方式：**全拼**、**双拼**、**五笔**、**仓颉**
 - 设置不同的输入习惯：**二三候选**、**回车清码**、**z键拼音反查** 等等
 
-正因如此高的可自定义性，拉高了它的使用门槛。为了让更多的五笔用户更省心地使用 Rime 输入五笔，就有了当前这个 86五笔输入方案，它的输入习惯比较接近于之前的极点五笔，码表也是使用的极点五笔的码表。
+正因其如此高的可自定义性，拉高了它的使用门槛。为了让更多的五笔用户更省心地使用 Rime 输入五笔，就有了当前这个 **86五笔输入方案**，它的输入习惯比较接近于之前的极点五笔，码表也是使用原有极点码表进行扩展的。
+
+原码表一般不会进行修改，后来新加的词都会加了后面的扩展码表中。
+
+
 
 > 单字的顺序严格对标原极点输入法词库： [五笔码表文件](https://github.com/KyleBing/wubi-jidan-dict)。 比如一级简码的二位候选： 
 > - `y`-`言`
@@ -37,7 +42,7 @@
 
 ### 1. macOS
 
-<img width="330" alt="skin-macos" src="https://user-images.githubusercontent.com/12215982/149726120-1a066937-551c-4a43-b2e8-b081f6366c9d.png">
+<img width="525" alt="Screenshot 2024-03-17 at 07 59 12" src="https://github.com/KyleBing/rime-wubi86-jidian/assets/12215982/7bb140ba-7d9f-44ca-a3b1-875aa008dbb1">
 
 ### 2. Windows
 皮肤可以通过修改 `weasel.custom.yaml` 文件内的 color_scheme 实现修改，对应正文的颜色方案
@@ -51,7 +56,7 @@ patch:
 <img width="500" alt="skin-windows" src="https://github.com/KyleBing/rime-wubi86-jidian/assets/12215982/d3ab63d8-6d93-47f5-a599-5f4d9334dfab"/>
 
 ### 3. Ubuntu
-<img width="250" alt="skin-ubuntu" src="https://user-images.githubusercontent.com/12215982/131607073-0b3dfe0e-bfc8-4be0-91c7-b304702acdda.png">
+<img width="200" alt="skin-ubuntu" src="https://user-images.githubusercontent.com/12215982/131607073-0b3dfe0e-bfc8-4be0-91c7-b304702acdda.png">
 
 
 ## 三、文件说明
@@ -154,9 +159,25 @@ iOS 添加词时需要用到 `快捷指令`，我已做了分享，直接点击�
 
 
 ### 5. Android
-因为平时不用 Android 设备，不太了解，如果有好的可以推荐下
+> 同文安卓输入法 github：[https://github.com/osfans/trime](https://github.com/osfans/trime)  
+> 输入法版本 release：[https://github.com/osfans/trime/releases](https://github.com/osfans/trime/releases)
+
+下载安装，将词库添加到对应的文件夹中，再进行部署即可使用
+
+### 6. 网页版输入法
+
+梧桐输入法 : [https://github.com/LibreService/my_rime](https://github.com/LibreService/my_rime)
+
+1. 打开输入法网站 [https://my-rime.vercel.app/](https://my-rime.vercel.app/)
+2. 点击下方 <kbd>Add new schemas</kbd> 中的 <kbd>Micro Plum</kbd> 按钮
+3. 在弹出窗口的 **Schema URL** 不添加如下内容，点击 <kbd>Install</kbd> 即可
+    ```bash
+    https://raw.githubusercontent.com/KyleBing/rime-wubi86-jidian/master/wubi86_jidian.schema.yaml
+    ```
+4. 之后就可以在输入框里用这个码表进行打字了
 
 
+<img width="811" alt="Screenshot 2024-03-04 at 16 03 27" src="https://github.com/KyleBing/rime-wubi86-jidian/assets/12215982/ddd23706-01c8-4d32-b1fc-ae184d6b088c">
 
 ## 五、扩展词库
 
@@ -175,13 +196,14 @@ iOS 添加词时需要用到 `快捷指令`，我已做了分享，直接点击�
 不再动原来的主词库，除非发现一些很没有必要的词才会进行删除操作，不会进行添加操作。  
 以后新增的词都都放置在了 `wubi86_jidian_extra` 这个扩展词库中，可以通过工具来实现实时更新线上最新的词库内容。
 
-这个词库是我维护的，你也可以将一些常用的词上传到线上。
-
+这个词库是我维护的，你也可以将一些常用的词上传到线上。  
 我的想法是维护一个咱们五笔用户自己的词库，最终实现非常舒服的码字的目标。
 
-需要注册码的 email 我获取即可： kylebing@163.com，来信请注明来意。
+需要注册码的 email 我获取即可： kylebing@163.com，来信请注明来意。  
+> 线上管理地址在:  [http://kylebing.cn/manager/#/wubi-words](http://kylebing.cn/manager/#/wubi-words)
 
-![工具上传词条](https://user-images.githubusercontent.com/12215982/216496512-8f54658a-71cd-4de2-8e16-dbb86baf6df4.png)
+![工具上传词条](https://user-images.githubusercontent.com/12215982/216496512-8f54658a-71cd-4de2-8e16-dbb86baf6df4.png) 
+
 
 > ![2022-12-29 09 09 39](https://user-images.githubusercontent.com/12215982/209891815-057ce25b-cad5-4994-9495-9f2a0768733d.png)
 
@@ -346,8 +368,8 @@ translator:
 如果你是单字派，只打单字，可以修改 `wubi86_jidian.schema.yaml` 这个文件，找到以下位置，根据需要去除对应行前面的 `#`，重新部署即可生效
 ```yaml
   filters:
-#   - lua_filter@single_char_first_filter # 单字优先
-#    - lua_filter@single_char_only # 纯单字
+#    - lua_filter@*wubi86_jidian_single_char_first_filter # 单字优先
+#    - lua_filter@*wubi86_jidian_single_char_only # 纯单字
 ```
 
 ### 9. 隐藏候选窗口（Windows）
