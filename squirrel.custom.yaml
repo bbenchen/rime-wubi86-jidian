@@ -22,7 +22,7 @@ patch:
       status_message_type: mix # long | short | mix
       memorize_size: true # 控制选项标是否在接触屏幕边缘时有粘性
       # ----------------  end  -------
-      alpha: 1.0                                # 候选窗口透明度：符点型数据，小数点形式，不然出错无法正常显示皮肤，0 时隐藏候选框
+      alpha: 0.8                                # 候选窗口透明度：符点型数据，小数点形式，不然出错无法正常显示皮肤，0 时隐藏候选框
       border_height: 3                          # 边距 - 面板上下
       border_width: 0                           # 宽度 - 边框
       border_color: 0xffffff                    # 颜色 - 边框
@@ -61,14 +61,24 @@ patch:
 
 # --- 特定程序定义初始状态的英文输入 ---
   app_options:
-    com.termius-dmg.mac: # Terminal - Mac
+    com.apple.Terminal:
       ascii_mode: true
-    org.gnu.Emacs: # Emacs
-      ascii_mode: true
+      no_inline: true
     net.kovidgoyal.kitty: # Kitty
       ascii_mode: true
-#    com.google.Chrome: # Chrome
-#      ascii_mode: true
+      no_inline: true
+    com.github.wez.wezterm:
+      ascii_mode: true
+      no_inline: true
+    org.gnu.Emacs: # Emacs
+      ascii_mode: true
+      no_inline: true
+    com.google.Chrome: # Chrome
+      # 規避 https://github.com/rime/squirrel/issues/435
+      inline: true
+    ru.keepcoder.Telegram:
+      # 規避 https://github.com/rime/squirrel/issues/475
+      inline: true
 #    com.coderforart.MWeb3: # MWeb
 #      ascii_mode: true
 #    com.apple.Safari: # Safari
