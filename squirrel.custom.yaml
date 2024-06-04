@@ -74,7 +74,7 @@ patch:
       status_message_type: mix # long | short | mix
       memorize_size: true # 控制选项标是否在接触屏幕边缘时有粘性
 
-      alpha: 1.0                                # 候选窗口透明度：符点型数据，小数点形式，不然出错无法正常显示皮肤，0 时隐藏候选框
+      alpha: 0.8                                # 候选窗口透明度：符点型数据，小数点形式，不然出错无法正常显示皮肤，0 时隐藏候选框
       border_height: 1                          # 边框宽度-上下
       border_width: 1                           # 边框宽度-左右， 两者同时存在时才显示边框
       border_color: 0x444444                    # 边框颜色
